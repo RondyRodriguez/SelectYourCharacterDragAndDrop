@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clockwork Enigma</title>
+</head>
+<body>
+<div id="music"><audio id="myAudio" autoplay="1" loop>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="characterselect.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<p>Click the buttons to set the volume of the BGM.</p>
+
+<button onclick="getVolume()" type="button">Mute the BGM</button>
+<button onclick="setHalfVolume()" type="button">Set volume to 0.2</button>
+<button onclick="setFullVolume()" type="button">Set volume to 1.0</button>
+</div>
+
+</body>
+
+<!-- All of the smaller Portraits are "Character-Container" while the main boxes are (red)"leftbox" and (blue) "rightbox" -->
+<div id="box"> 
+  <div id="character-container">
+  <h2>Character Select</h2>
+  <div id="rightbox">place character here!</div>
+  <div id="leftbox">place character here!</div>
+  
+<!-- End -->
+
+<!-- All the Audio Files/IDs to be called for are here -->
+<audio id="hakumen-audio" src="VS_hazama_000.wav" ></audio>
+<audio id="baiken-audio" src="baikenVA.mp3" ></audio>
+<audio id="robert-audio" src="robert.mp3"></audio>
+ <audio id="maxima-audio" src="maxima.mp3"></audio>
+ <audio id="parasoul-audio" src="parasoul.mp3"></audio>
+<audio id="ermac-audio" src="ermac.mp3"></audio>
+<audio id="dudley-audio" src="dudley.mp3"></audio>
+<audio id="IronTager-audio" src="IronTagerVA.mp3" ></audio>
+<!-- End of audio IDs-->
+
+<!-- Portrait of the characters in minor boxes -->
+  <img id="hakumen" src="hakumenHeadshot.png"></img>
+  <img id="robert" src="RobertHeadshot.gif"></img>
+  <img id="baiken" src="baikenHeadshot.png"></img>
+  <img id="maxima" src="MaximaHeadshot.gif"></img>
+  <img id="parasol" src="parasol headshot.png"></img>
+  <img id="ermac" src="ermac headshot.png"></img>
+  <img id="dudley" src="dudleyheadshot.gif"></img>
+  <img id="irontager" src="IronTagerHeadshot.png"> </img>
+<!-- End -->
+</div>
+</div>
+</div>
+</html>
+
+<style type="text/css">
+  @import url(https://fonts.googleapis.com/css?family=Orbitron:400,500,900,700);
+
+body {
+	overflow: hidden;
+  background-image: url('http://lotus.itservices.manchester.ac.uk:8080/img/txture.png');
+  font-family: 'Orbitron', sans-serif;
+
+background-size: 400% 400%;
+
+-webkit-animation: Haku 1s ease infinite;
+-moz-animation: Haku 1s ease infinite;
+animation: Haku 1s ease infinite;
+}
+@-webkit-keyframes Haku {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes Haku {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes Haku { 
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+
+h2 {
+  color: green;
+  text-align: center;
+  font-size: 3em;
+  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+  animation: blink 1s steps(4, start) infinite;
+}
+@-moz-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-o-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+}
+
+#character-container {
+  padding: 10px;
+  width: 1000px;
+  height: 600px;
+  background-color: #fff;
+  margin: 0 auto;
+  position: relative;
+}
+#rightbox {
+  width: 300px;
+  height: 370px;
+  float: right;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: blue;
+  background-image: url();
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  margin-right: 0;
+  position: relative;
+  margin: auto;
+      /* Flips the image to look more "player 2"ish */
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        
+}
+
+#leftbox {
+  width: 300px;
+  height: 370px;
+  float: left;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: red;
+  background-image: url();
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  margin-right: 50px;
+  position: relative;
+  margin: auto;
+}
+
+#character-container img {
+  height: 75px;
+  width: 75px;
+  border: 3px groove green;
+  margin: 2.5px;
+}
+
+#character-container img:hover {
+  border-color: purple;
+  box-shadow: 0 0 5px purple;
+}
+
+
+
+p{ 
+color: green;
+  text-align: center;
+  font-size: 1.5em;
+  text-shadow: -1px 0 0 #fdff2a, -2px 0 0 #df4a42, 1px 0 0 #91fcfe, 2px 0 0 #4405fc;
+  animation: blink 1s steps(4, start) infinite;
+ margin: 0;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ /* Apply animation to this element */	
+ -moz-animation: scroll-left 10s linear infinite;
+ -webkit-animation: scroll-left 10s linear infinite;
+ animation: scroll-left 10s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Browser bug fix */
+ -webkit-transform: translateX(100%); /* Browser bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Browser bug fix */
+ -webkit-transform: translateX(-100%); /* Browser bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+
+#music{
+	position: relative;
+	width: 420px;
+	margin: 0 auto;
+}
+
+button{
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: green;
+  box-sizing: border-box;
+  margin-right: 50px;
+  margin: auto;
+  text-align: center;
+}
+
+
+</style>
+
+
+
+
+<script>
+var x = document.getElementById("myAudio");
+
+function getVolume() { 
+    x.volume = 0.0;
+} 
+
+function setHalfVolume() { 
+    x.volume = 0.2;
+}
+   
+function setFullVolume() { 
+    x.volume = 1.0;
+} 
+</script> 
+
+<script type="text/javascript">
+function doFirst(){
+  mypic = document.getElementById('hakumen');
+  mypic.addEventListener("dragstart",startDrag, false);
+  leftbox = document.getElementById('leftbox');
+  leftbox.addEventListener("dragenter",function(e){e.preventDefault();} , false);
+  leftbox.addEventListener("dragover",function(e){e.preventDefault();} , false);
+  leftbox.addEventListener("drop",dropped,false);
+
+}
+
+function startDrag(e){
+  var code = '<img src="hakumen.gif">';
+  e.dataTransfer.setData('Text',code);
+}
+function dropped(e){
+  e.preventDefault(); 
+  leftbox.innerHTML = e.dataTransfer.getData('Text');
+   var audio = document.getElementById("hakumen-audio");
+   audio.play();
+   audio.volume = 0.5;
+   leftbox.innerCSS = e.dataTransfer.getData('Text');
+}
+
+  window.addEventListener("load", doFirst, false);
+</script>
